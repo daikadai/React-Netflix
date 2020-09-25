@@ -1,7 +1,7 @@
 import React from 'react'
 import { Footer } from '../components'
 
-const FooterContainer = () => {
+export const FooterContainer = () => {
   return (
     <Footer>
       <Footer.Title>Questions? Contact Us</Footer.Title>
@@ -42,4 +42,4 @@ const FooterContainer = () => {
   )
 }
 
-export default FooterContainer
+
