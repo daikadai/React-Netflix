@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as ROUTER from './constants/routes';
 import { Browse, Home, Signin, Signup } from './pages';
 export default function App() {

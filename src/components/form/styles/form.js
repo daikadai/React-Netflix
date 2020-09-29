@@ -82,7 +82,7 @@ export const Input = styled.input`
   &:last-of-type {
     margin-bottom: 30px;
   }
-`
+` 
 
 export const Submit = styled.button`
   background: #e50914;
