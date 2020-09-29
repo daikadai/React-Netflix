@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
-import { IsUserRedirect } from "./helpers/routes";
+import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
 import { Browse, Home, Signin, Signup } from "./pages";
 
 export default function App() {
-  const user = {};
+  const user = null;
 
   return (
     <Router>
@@ -23,12 +23,16 @@ export default function App() {
       >
         <Signup />
       </IsUserRedirect>
-      <Route exact path="/browse">
+      <ProtectedRoute user={user} exact path={ROUTES.BROWSE}>
         <Browse />
-      </Route>
-      <Route exact path={ROUTES.HOME}>
+      </ProtectedRoute>
+      <IsUserRedirect
+        user={user}
+        exact path={ROUTES.HOME}
+        loggedInPath={ROUTES.BROWSE}
+      >
         <Home />
-      </Route>
+      </IsUserRedirect>
     </Router>
   );
 }
