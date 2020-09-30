@@ -29,8 +29,8 @@ export const Container = styled.div`
 export const Group = styled.div`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection === 'row' ? 'row' : 'column'};
-  ${({ alignItems}) => alignItems && `align-items: ${alignItems}`}
-  ${({ margin}) => margin && `margin: ${margin}`}
+  ${({ alignItems}) => alignItems && `align-items: ${alignItems}`};
+  ${({ margin  }) => margin && `margin: ${margin}`};
 
   > ${Container}:first-of-type {
     @media (min-width: 1100px) {
@@ -73,7 +73,14 @@ export const Meta = styled.div`
 `;
 
 export const FeatureText = styled.p`
-  margin-left: 0;
+  font-size: 18px;
+  color: white;
+  font-weight: ${({ fontWeight }) => fontWeight === 'bold' ? 'bold' : 'normal'};
+  margin: 0;
+
+  @media (max-width: 600px) {
+    line-height: 22px;
+  }
 `;
 
 export const Feature = styled.div`
